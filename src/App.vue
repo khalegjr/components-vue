@@ -18,7 +18,27 @@
             </h3>
 
             <div class="flex justify-center">
-                <Dropdown text="Menu">
+                <Dropdown text="Menu" naked>
+                    <DropdownItem
+                        href="http://www.adunicamp.org.br"
+                        target="_blank"
+                    >
+                        Item 1
+                    </DropdownItem>
+                    <DropdownItem :to="{ name: 'foo' }"> Item 2 </DropdownItem>
+                    <DropdownDivider />
+                    <DropdownItem
+                        :to="{ name: 'bar' }"
+                        href="http://www.adunicamp.org.br"
+                    >
+                        Item 3
+                    </DropdownItem>
+                    <DropdownItem @click="onItem4Click"> Item 4 </DropdownItem>
+                    <DropdownDivider />
+                    <DropdownItem> Item 5 </DropdownItem>
+                </Dropdown>
+
+                <Dropdown text="Menu 2" no-icon>
                     <DropdownItem
                         href="http://www.adunicamp.org.br"
                         target="_blank"
