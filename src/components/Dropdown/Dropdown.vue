@@ -3,7 +3,7 @@
         <button
             type="button"
             class="flex items-center justify-center leading-5 transition ease-in-out duration-150 z-50 text-sm font-medium text-cool-gray-700 hover:text-cool-gray-500 active:text-cool-gray-700 focus:border-blue-300 focus:outline-none focus:shadow-outline-blue px-4 py-2 bg-white active:bg-gray-50"
-            :class="{ 'rounded-md': rounded }"
+            :class="{ 'rounded-md': rounded, border: !naked }"
             @click.stop.prevent="toggle()"
         >
             {{ text }}
@@ -57,6 +57,11 @@ export default {
         },
 
         rounded: {
+            type: Boolean,
+            default: false,
+        },
+
+        naked: {
             type: Boolean,
             default: false,
         },
