@@ -19,10 +19,20 @@
 
             <div class="flex justify-center">
                 <Dropdown text="Menu">
-                    <DropdownItem> Item 1 </DropdownItem>
-                    <DropdownItem> Item 2 </DropdownItem>
+                    <DropdownItem
+                        href="http://www.adunicamp.org.br"
+                        target="_blank"
+                    >
+                        Item 1
+                    </DropdownItem>
+                    <DropdownItem :to="{ name: 'foo' }"> Item 2 </DropdownItem>
                     <DropdownDivider />
-                    <DropdownItem> Item 3 </DropdownItem>
+                    <DropdownItem
+                        :to="{ name: 'bar' }"
+                        href="http://www.adunicamp.org.br"
+                    >
+                        Item 3
+                    </DropdownItem>
                     <DropdownItem> Item 4 </DropdownItem>
                     <DropdownDivider />
                     <DropdownItem> Item 5 </DropdownItem>
