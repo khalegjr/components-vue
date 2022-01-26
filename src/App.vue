@@ -18,7 +18,15 @@
             </h3>
 
             <div class="flex justify-center">
-                <dropdown />
+                <Dropdown text="Menu">
+                    <DropdownItem> Item 1 </DropdownItem>
+                    <DropdownItem> Item 2 </DropdownItem>
+                    <DropdownDivider />
+                    <DropdownItem> Item 3 </DropdownItem>
+                    <DropdownItem> Item 4 </DropdownItem>
+                    <DropdownDivider />
+                    <DropdownItem> Item 5 </DropdownItem>
+                </Dropdown>
             </div>
         </div>
     </div>
@@ -27,10 +35,12 @@
 <script>
 import PasswordRevealing from "./components/PasswordRevealing.vue";
 import Dropdown from "./components/Dropdown/Dropdown.vue";
+import DropdownItem from "./components/Dropdown/DropdownItem.vue";
+import DropdownDivider from "./components/Dropdown/DropdownDivider.vue";
 
 export default {
     name: "App",
-    components: { PasswordRevealing, Dropdown },
+    components: { PasswordRevealing, Dropdown, DropdownItem, DropdownDivider },
 
     data() {
         return {

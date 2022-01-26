@@ -5,7 +5,7 @@
             class="flex items-center justify-center leading-5 transition ease-in-out duration-150 z-50 text-sm font-medium text-cool-gray-700 hover:text-cool-gray-500 active:text-cool-gray-700 focus:border-blue-300 focus:outline-none focus:shadow-outline-blue px-4 py-2 bg-white active:bg-gray-50"
             @click.stop.prevent="toggle()"
         >
-            Dropdown
+            {{ text }}
 
             <svg
                 class="h-4 w-4 -mr-1 ml-2"
@@ -25,36 +25,7 @@
             class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg z-50"
         >
             <div class="py-1 rounded-md bg-white shadow-xs">
-                <ul>
-                    <li
-                        class="block flex items-center w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 cursor-pointer"
-                    >
-                        Opção 1
-                    </li>
-                    <li
-                        class="block flex items-center w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 cursor-pointer"
-                    >
-                        Opção 2
-                    </li>
-                    <li
-                        class="block flex items-center w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 cursor-pointer"
-                    >
-                        Opção 3
-                    </li>
-
-                    <div class="border-t my-1 border-cool-gray-100">
-                        <li
-                            class="block flex items-center w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 cursor-pointer"
-                        >
-                            Opção 4
-                        </li>
-                        <li
-                            class="block flex items-center w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 cursor-pointer"
-                        >
-                            Opção 5
-                        </li>
-                    </div>
-                </ul>
+                <slot />
             </div>
         </div>
     </div>
@@ -63,6 +34,12 @@
 <script>
 export default {
     name: "Dropdown",
+    props: {
+        text: {
+            type: String,
+            default: "Dropdown",
+        },
+    },
 
     data() {
         return {
