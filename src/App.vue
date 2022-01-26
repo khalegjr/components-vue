@@ -33,7 +33,7 @@
                     >
                         Item 3
                     </DropdownItem>
-                    <DropdownItem> Item 4 </DropdownItem>
+                    <DropdownItem @click="onItem4Click"> Item 4 </DropdownItem>
                     <DropdownDivider />
                     <DropdownItem> Item 5 </DropdownItem>
                 </Dropdown>
@@ -56,6 +56,12 @@ export default {
         return {
             password: "",
         };
+    },
+
+    methods: {
+        onItem4Click(evt) {
+            console.log("click item 4", evt);
+        },
     },
 };
 </script>

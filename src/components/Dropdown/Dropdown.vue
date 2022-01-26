@@ -41,6 +41,13 @@ export default {
         },
     },
 
+    // passa o componente pai para acesso dos filhos
+    provide() {
+        return {
+            dropdown: this,
+        };
+    },
+
     data() {
         return {
             isOpen: false,
@@ -50,6 +57,10 @@ export default {
     methods: {
         toggle() {
             this.isOpen = !this.isOpen;
+        },
+
+        close() {
+            this.isOpen = false;
         },
     },
 };
