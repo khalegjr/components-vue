@@ -7,9 +7,9 @@
             <PasswordRevealing
                 :value="password"
                 placeholder="Digite sua senha"
+                name="password"
             />
             <br />
-            {{ password }}
         </div>
     </div>
 </template>
