@@ -9,6 +9,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.0.0",
+    "vue-router": "^3.5.3",
     "webpack": "^5.67.0"
   },
   "devDependencies": {
