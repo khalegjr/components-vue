@@ -3,6 +3,7 @@
         <button
             type="button"
             class="flex items-center justify-center leading-5 transition ease-in-out duration-150 z-50 text-sm font-medium text-cool-gray-700 hover:text-cool-gray-500 active:text-cool-gray-700 focus:border-blue-300 focus:outline-none focus:shadow-outline-blue px-4 py-2 bg-white active:bg-gray-50"
+            @click.stop.prevent="toggle()"
         >
             Dropdown
 
@@ -20,6 +21,7 @@
         </button>
 
         <div
+            v-show="isOpen"
             class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg z-50"
         >
             <div class="py-1 rounded-md bg-white shadow-xs">
@@ -63,7 +65,15 @@ export default {
     name: "Dropdown",
 
     data() {
-        return {};
+        return {
+            isOpen: false,
+        };
+    },
+
+    methods: {
+        toggle() {
+            this.isOpen = !this.isOpen;
+        },
     },
 };
 </script>
