@@ -22,14 +22,23 @@
             </svg>
         </button>
 
-        <div
-            v-show="isOpen"
-            class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg z-50"
+        <Transition
+            enter-active-class="transition ease-out duration-100"
+            enter-class="transform opacity-0 scale-95"
+            enter-to-class="transform opacity-100 scale-100"
+            leave-active-class="transition ease-in duration-75"
+            leave-class="transform opacity-100 scale-100"
+            leave-to-class="transform opacity-0 scale-95"
         >
-            <div class="py-1 rounded-md bg-white shadow-xs">
-                <slot />
+            <div
+                v-show="isOpen"
+                class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg z-50"
+            >
+                <div class="py-1 rounded-md bg-white shadow-xs">
+                    <slot />
+                </div>
             </div>
-        </div>
+        </Transition>
     </div>
 </template>
 
