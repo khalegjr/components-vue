@@ -62,6 +62,18 @@ export default {
         close() {
             this.isOpen = false;
         },
+
+        clickOutListener(evt) {
+            // console.log(evt.target);
+
+            if (!this.$el.contains(evt.target)) {
+                this.close();
+            }
+        },
+    },
+
+    mounted() {
+        document.addEventListener("click", this.clickOutListener);
     },
 };
 </script>
