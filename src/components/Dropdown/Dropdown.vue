@@ -8,6 +8,7 @@
             {{ text }}
 
             <svg
+                v-if="!noIcon"
                 class="h-4 w-4 -mr-1 ml-2"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -38,6 +39,11 @@ export default {
         text: {
             type: String,
             default: "Dropdown",
+        },
+
+        noIcon: {
+            type: Boolean,
+            default: false,
         },
     },
 
@@ -70,10 +76,18 @@ export default {
                 this.close();
             }
         },
+
+        rootCloseListener() {
+            console.log("rootCloseListener");
+        },
     },
 
     mounted() {
         document.addEventListener("click", this.clickOutListener);
+    },
+
+    beforeDestroy() {
+        document.removeEventListener("click", this.clickOutListener);
     },
 };
 </script>
